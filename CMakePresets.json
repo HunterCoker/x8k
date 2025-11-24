@@ -1,0 +1,46 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "generator": "Ninja",
+            "toolchainFile": "${sourceDir}/cmake/gcc_arm.cmake",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "A8K_BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "debug-gcc-arm",
+            "inherits": "default",
+            "binaryDir": "build/debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release-gcc-arm",
+            "inherits": "default",
+            "binaryDir": "build/release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug-gcc-arm",
+            "configurePreset": "debug-gcc-arm"
+        },
+        {
+            "name": "rrelease-gcc-arm",
+            "configurePreset": "release-gcc-arm"
+        }
+    ]
+}
