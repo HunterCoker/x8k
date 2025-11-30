@@ -13,4 +13,14 @@ none-arm-eabi-gcc --version
 
 ### Use CMake to configure and build firmware
 
-### Use OpenOCD to flash firmware onto mouse
+### Install JLink 
+
+## Flashing and Debugging
+
+### Use JLinkFlash
+
+###
+
+```sh
+sudo minicom -D /dev/ttyACM0 -b 155200
+```

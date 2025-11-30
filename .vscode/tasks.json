@@ -9,7 +9,7 @@
             "command": "cmake",
             "args": [
                 "--preset",
-                "debug-gnu-arm"
+                "debug-cortex-m4"
             ],
         },
         {
@@ -19,20 +19,16 @@
             "args": [
                 "--build",
                 "--preset",
-                "debug-gnu-arm"
+                "debug-cortex-m4"
             ],
             "problemMatcher": "$gcc"
         },
         {
-            "label": "build (debug)",
+            "label": "flash (debug)",
             "type": "shell",
-            "command": "cmake",
+            "command": "openocd",
             "args": [
-                "--build",
-                "--preset",
-                "debug-gnu-arm"
             ],
-            "problemMatcher": "$gcc"
         }
     ]
 }

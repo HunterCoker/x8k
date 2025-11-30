@@ -9,13 +9,20 @@ target_sources(m480_hal
         ${M480BSP_LIBRARY_DIR}/StdDriver/src/clk.c
         ${M480BSP_LIBRARY_DIR}/StdDriver/src/gpio.c
         ${M480BSP_LIBRARY_DIR}/StdDriver/src/usbd.c
+        ${M480BSP_LIBRARY_DIR}/StdDriver/src/uart.c
 )
 
 target_include_directories(m480_hal
-    PUBLIC
+    SYSTEM PUBLIC
         ${M480BSP_LIBRARY_DIR}/CMSIS/Include
         ${M480BSP_LIBRARY_DIR}/Device/Nuvoton/M480/Include
         ${M480BSP_LIBRARY_DIR}/StdDriver/inc
+)
+
+target_compile_options(m480_hal
+    PRIVATE
+        $<$<COMPILE_LANGUAGE:CXX>:-Wno-register>
+        $<$<COMPILE_LANGUAGE:CXX>:-Wno-volatile>
 )
 
 # Expose startup files to parent so executable can use them

@@ -17,7 +17,7 @@
             }
         },
         {
-            "name": "debug-gcc-arm",
+            "name": "debug-cortex-m4",
             "inherits": "default",
             "binaryDir": "build/debug",
             "cacheVariables": {
@@ -25,7 +25,7 @@
             }
         },
         {
-            "name": "release-gcc-arm",
+            "name": "release-cortex-m4",
             "inherits": "default",
             "binaryDir": "build/release",
             "cacheVariables": {
@@ -35,12 +35,12 @@
     ],
     "buildPresets": [
         {
-            "name": "debug-gcc-arm",
-            "configurePreset": "debug-gcc-arm"
+            "name": "debug-cortex-m4",
+            "configurePreset": "debug-cortex-m4"
         },
         {
-            "name": "rrelease-gcc-arm",
-            "configurePreset": "release-gcc-arm"
+            "name": "rrelease-cortex-m4",
+            "configurePreset": "release-cortex-m4"
         }
     ]
 }
