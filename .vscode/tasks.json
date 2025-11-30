@@ -11,6 +11,7 @@
                 "--preset",
                 "debug-cortex-m4"
             ],
+            "problemMatcher": []
         },
         {
             "label": "build (debug)",
@@ -27,8 +28,20 @@
             "label": "flash (debug)",
             "type": "shell",
             "command": "openocd",
+            "args": [],
+            "problemMatcher": []
+        },
+        {
+            "label": "serial monitor",
+            "type": "shell",
+            "command": "minicom",
             "args": [
+                "-D",
+                "/dev/ttyACM0",
+                "-b",
+                "155200"
             ],
+            "problemMatcher": []
         }
     ]
 }
