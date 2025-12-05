@@ -1,5 +1,7 @@
 #include "uart_init.h"
 
+#include <NuMicro.h>
+
 #include <assert.h>
 #include <stdbool.h>
 
@@ -7,6 +9,7 @@ static bool s_uartInitialized = false;
 
 void UART_Init(void)
 {
+#ifdef DEBUG
     CLK_EnableModuleClock(UART0_MODULE);
 
     /* Set UART0 module clock source (HXT) and divider (1) */
@@ -20,12 +23,17 @@ void UART_Init(void)
     UART_Open(UART0, 115200);
 
     s_uartInitialized = true;
+#endif
 }
 
 void uart_put_char(const char c)
 {
+#ifdef DEBUG
     assert(s_uartInitialized == true);
 
     while (UART_IS_TX_FULL(UART0));
     UART_WRITE(UART0, c);
+#else
+#   error "UART only available in debug configuration."
+#endif
 }

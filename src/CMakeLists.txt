@@ -3,8 +3,11 @@ set(A8K_TARGET ${PROJECT_NAME})
 add_executable(${A8K_TARGET}
     ${M480_STARTUP}
     "main.cpp"
-    "uart_init.c"
-    "retarget.c"
+    "sys/sys_init.c"
+    "sys/uart_init.c"
+    "sys/hid_mouse.c"
+    "sys/descriptors.c"
+    "sys/retarget.c"
 )
 
 target_include_directories(${A8K_TARGET}
