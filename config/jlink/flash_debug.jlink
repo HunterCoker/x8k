@@ -1,0 +1,15 @@
+; setup
+device M487JIDAE
+if SWD
+speed auto
+connect
+
+; flash
+r
+erase
+loadfile build/debug/a8k_firmware.elf
+r
+
+; close session
+g
+exit

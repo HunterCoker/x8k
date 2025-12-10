@@ -8,7 +8,6 @@
 #ifndef __DESCRIPTORS_C__
 #define __DESCRIPTORS_C__
 
-/*!<Includes */
 #include "NuMicro.h"
 #include "hid_mouse.h"
 

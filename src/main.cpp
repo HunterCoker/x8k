@@ -9,10 +9,10 @@ int main()
     SYS_Init();
 
     UART_Init();
-    printf("Uart Init!\n");
 
     HID_Init();
-    printf("HID Init!\n");
+
+    printf("TEST\n");
 
     while (1)
     {

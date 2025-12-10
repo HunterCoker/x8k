@@ -35,9 +35,11 @@ target_link_options(${A8K_TARGET}
         -Wl,--gc-sections
 )
 
-add_custom_command(TARGET ${A8K_TARGET} POST_BUILD
-    COMMAND arm-none-eabi-objcopy -O binary
-            $<TARGET_FILE:${A8K_TARGET}>
-            ${CMAKE_BINARY_DIR}/${A8K_TARGET}.bin
-    COMMENT "Generating ${A8K_TARGET}.bin"
-)
+set_target_properties(${A8K_TARGET} PROPERTIES SUFFIX ".elf")
+
+# add_custom_command(TARGET ${A8K_TARGET} POST_BUILD
+#     COMMAND arm-none-eabi-objcopy -O binary
+#             $<TARGET_FILE:${A8K_TARGET}>
+#             ${CMAKE_BINARY_DIR}/${A8K_TARGET}.bin
+#     COMMENT "Generating ${A8K_TARGET}.bin"
+# )

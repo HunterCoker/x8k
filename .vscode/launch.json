@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug (J-Link)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "device": "M487JIDAE",
+            "interface": "swd",
+            "executable": "build/debug/a8k_firmware.elf",
+            "svdFile": "config/M480.svd",
+            "swoConfig": { "enabled": false },
+            "servertype": "jlink",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+        },
+    ]
+}

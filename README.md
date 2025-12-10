@@ -13,11 +13,9 @@ none-arm-eabi-gcc --version
 
 ### Use CMake to configure and build firmware
 
-### Install JLink 
+### Install JLink Software
 
 ## Flashing and Debugging
-
-### Use JLinkFlash
 
 ###
 

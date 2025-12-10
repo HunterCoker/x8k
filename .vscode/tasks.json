@@ -9,7 +9,7 @@
             "command": "cmake",
             "args": [
                 "--preset",
-                "debug-cortex-m4"
+                "debug-cortex-m4",
             ],
             "problemMatcher": []
         },
@@ -20,28 +20,40 @@
             "args": [
                 "--build",
                 "--preset",
-                "debug-cortex-m4"
+                "debug-cortex-m4",
             ],
             "problemMatcher": "$gcc"
         },
         {
             "label": "flash (debug)",
             "type": "shell",
-            "command": "openocd",
-            "args": [],
+            "command": "JLinkExe",
+            "args": [
+                "-CommanderScript",
+                "config/jlink/flash_debug.jlink",
+            ],
             "problemMatcher": []
         },
         {
-            "label": "serial monitor",
+            "label": "build & flash (debug)",
             "type": "shell",
-            "command": "minicom",
-            "args": [
-                "-D",
-                "/dev/ttyACM0",
-                "-b",
-                "155200"
+            "dependsOn": [
+                "build (debug)",
+                "flash (debug)",
             ],
             "problemMatcher": []
-        }
+        },
+        // {
+        //     "label": "serial monitor",
+        //     "type": "shell",
+        //     "command": "minicom",
+        //     "args": [
+        //         "-D",
+        //         "/dev/ttyACM0",
+        //         "-b",
+        //         "155200"
+        //     ],
+        //     "problemMatcher": []
+        // }
     ]
 }
