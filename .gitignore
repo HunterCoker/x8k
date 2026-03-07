@@ -3,3 +3,6 @@
 
 build
 compile_commands.json
+
+# Temporarily hidden file to abide by NDA with PixArt
+src/drivers/communication/sensors/paw3395.cpp

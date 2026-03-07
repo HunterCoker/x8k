@@ -8,7 +8,8 @@
 #ifndef __DESCRIPTORS_C__
 #define __DESCRIPTORS_C__
 
-#include "NuMicro.h"
+#include <NuMicro.h>
+
 #include "hid_mouse.h"
 
 /*!<USB HID Report Descriptor */
@@ -49,9 +50,6 @@ uint8_t HID_MouseReportDescriptor[] __attribute__((aligned(4))) =
     0xC0,           /* End Collection */
 };
 
-
-/*----------------------------------------------------------------------------*/
-/*!<USB Device Descriptor */
 #ifdef __ICCARM__
 #pragma data_alignment=4
 uint8_t gu8DeviceDescriptor[] =
@@ -80,7 +78,6 @@ uint8_t gu8DeviceDescriptor[] __attribute__((aligned(4))) =
     0x01            /* bNumConfigurations */
 };
 
-/*!<USB Qualifier Descriptor */
 #ifdef __ICCARM__
 #pragma data_alignment=4
 uint8_t gu8QualifierDescriptor[] =

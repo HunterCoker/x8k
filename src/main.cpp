@@ -1,21 +1,11 @@
-#include "sys/sys_init.h"
-#include "sys/uart_init.h"
-#include "sys/hid_mouse.h"
+#include "drivers/drivers.h"
 
-#include <stdio.h>
-
-int main()
+int main(void)
 {
-    SYS_Init();
+    Drivers* drivers = Drivers::get();
+    drivers->initialize();
 
-    UART_Init();
-
-    HID_Init();
-
-    printf("TEST\n");
-
-    while (1)
+    while (true)
     {
-        // HID_Process();
     }
 }

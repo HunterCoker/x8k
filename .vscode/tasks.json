@@ -41,6 +41,7 @@
                 "build (debug)",
                 "flash (debug)",
             ],
+            "dependsOrder": "sequence",
             "problemMatcher": []
         },
         // {
