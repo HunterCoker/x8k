@@ -9,6 +9,7 @@
 #define __DESCRIPTORS_C__
 
 #include <NuMicro.h>
+#include <usbd.h>
 
 #include "hid_mouse.h"
 
@@ -393,6 +394,5 @@ S_HSUSBD_INFO_T gsHSInfo =
     gu32UsbHidReportLen,
     gu32ConfigHidDescIdx,
 };
-
 
 #endif  /* __DESCRIPTORS_C__ */

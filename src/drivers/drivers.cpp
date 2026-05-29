@@ -14,7 +14,7 @@ void Drivers::initialize()
     clock.initialize();
     uart.initialize();
     spi.initialize();
-    fsusb.initialize();
+    usb.initialize();
     hsusb.initialize();
     paw3395.initialize();
 }

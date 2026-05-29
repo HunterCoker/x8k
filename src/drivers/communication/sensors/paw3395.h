@@ -3,6 +3,7 @@
 #include "drivers/util_macros.h"
 
 #include <stdint.h>
+#include <stddef.h>
 
 class Drivers;
 
@@ -19,7 +20,7 @@ namespace communication::sensors
  */
 class Paw3395
 {
-private:
+public:
     typedef uint8_t     register_t ;
     
 public:
@@ -28,11 +29,18 @@ public:
     ~Paw3395() = default;
 
     void initialize();
+    void update();
+
+    bool motionReady() const { return _M_motionReady; }
+
+    uint16_t getDx() const;
+    uint16_t getDy() const;
 
 private:
     void loadInitRegisterSetting() const;
-
+    
     uint8_t read(register_t reg) const;
+    void readMotionBurst() const;
     void write(register_t reg, const uint8_t tx) const;
 
 private:
@@ -41,6 +49,8 @@ private:
 
 private:
     Drivers* _M_drivers;
+
+    bool _M_motionReady;
 };
 
 }  // namespace communication::sensors

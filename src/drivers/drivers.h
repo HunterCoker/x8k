@@ -3,7 +3,7 @@
 #include "architecture/clock.h"
 #include "communication/serial/uart.h"
 #include "communication/serial/spi.h"
-#include "communication/serial/fsusb.h"
+#include "communication/serial/usb.h"
 #include "communication/serial/hsusb.h"
 #include "communication/sensors/paw3395.h"
 
@@ -12,7 +12,8 @@ class Drivers
 public:
     Drivers()
         : clock(),
-          uart(), spi(), fsusb(), hsusb(),
+          uart(), spi(),
+          usb(), hsusb(),
           paw3395(this)
     {}
 
@@ -22,9 +23,9 @@ public:
 
 public:
     architecture::Clock clock;
-    communication::serial::Uart  uart;
-    communication::serial::Spi   spi;
-    communication::serial::FSUsb fsusb;
+    communication::serial::Uart uart;
+    communication::serial::Spi spi;
+    communication::serial::Usb usb;
     communication::serial::HSUsb hsusb;
     communication::sensors::Paw3395 paw3395;
 
